@@ -1,2 +1,2 @@
 # FirstAppKotlin
-Firsttime Kotlin Language
+First time Kotlin Language
