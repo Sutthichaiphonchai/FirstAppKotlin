@@ -1,10 +1,9 @@
-package com.example.freedom.firstkotlin
+package com.example.freedom.firstkotlin.models
 
 
+data class Hobby(var title: String)
 
-data class Hobby(var title:String)
-
-object Supplier{
+object Supplier {
     val hobbies = listOf<Hobby>(
             Hobby("Swiming"),
             Hobby("Reading"),
@@ -27,7 +26,5 @@ object Supplier{
             Hobby("Gaming"),
             Hobby("Programing"),
             Hobby("Talking")
-
-
-            )
+    )
 }

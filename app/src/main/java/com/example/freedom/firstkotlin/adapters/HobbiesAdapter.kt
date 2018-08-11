@@ -1,4 +1,4 @@
-package com.example.freedom.firstkotlin
+package com.example.freedom.firstkotlin.adapters
 
 import android.content.Context
 import android.content.Intent
@@ -7,54 +7,54 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_main.*
+import com.example.freedom.firstkotlin.models.Hobby
+import com.example.freedom.firstkotlin.R
 import kotlinx.android.synthetic.main.list_item.view.*
 
-class HobbiesAdapter(val context:Context,val hobbies:List<Hobby> ) :RecyclerView.Adapter<HobbiesAdapter.MyViewHolder>(){
+class HobbiesAdapter(val context: Context, private val hobbies: List<Hobby>) : RecyclerView.Adapter<HobbiesAdapter.MyViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-     val view =  LayoutInflater.from(context).inflate(R.layout.list_item,parent,false)
+        val view = LayoutInflater.from(context).inflate(R.layout.list_item, parent, false)
         return MyViewHolder(view)
     }
 
     override fun getItemCount(): Int {
-       return hobbies.size
+        return hobbies.size
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-     val hobby = hobbies[position]
+        val hobby = hobbies[position]
         holder.setData(hobby, position)
     }
 
-    inner class  MyViewHolder(itemview:View) : RecyclerView.ViewHolder(itemview){
+    inner class MyViewHolder(itemview: View) : RecyclerView.ViewHolder(itemview) {
 
 
-        var currentHobby:Hobby? = null
-        var currentPosition:Int = 0
+        var currentHobby: Hobby? = null
+        var currentPosition: Int = 0
 
         init {
             itemview.setOnClickListener {
-                Toast.makeText(context,currentHobby!!.title+" Click !  ",Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, currentHobby!!.title + " Click !  ", Toast.LENGTH_SHORT).show()
             }
 
             itemview.imgShare.setOnClickListener {
-                val message:String = "My hobby is "+currentHobby!!.title
+                val message: String = "My hobby is " + currentHobby!!.title
 
                 val intent = Intent()
                 intent.action = Intent.ACTION_SEND
-                intent.putExtra(Intent.EXTRA_TEXT,message)
+                intent.putExtra(Intent.EXTRA_TEXT, message)
                 intent.type = "text/plain"
 
 
-                context.startActivity(Intent.createChooser(intent,"Please Select Apps:"))
+                context.startActivity(Intent.createChooser(intent, "Please Select Apps:"))
             }
         }
 
-        fun setData(hobby:Hobby?,pos:Int){
+        fun setData(hobby: Hobby?, pos: Int) {
             itemView.txvTitle.text = hobby!!.title
 
             this.currentHobby = hobby
             this.currentPosition = pos
         }
     }
-
 }
