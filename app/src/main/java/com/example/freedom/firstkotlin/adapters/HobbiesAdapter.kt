@@ -36,7 +36,7 @@ class HobbiesAdapter(val context: Context, private val hobbies: List<Hobby>) : R
         init {
             itemview.setOnClickListener {
                 currentHobby?.let {
-                    context.showToast(currentHobby!!.title + " Click !  ")
+                    context.showToast(currentHobby!!.title + " " +context.resources.getString(R.string.clicked))
                 }
 //                context.showToast(currentHobby!!.title + " Click !  ")
                 //Toast.makeText(context, currentHobby!!.title + " Click !  ", Toast.LENGTH_SHORT).show()

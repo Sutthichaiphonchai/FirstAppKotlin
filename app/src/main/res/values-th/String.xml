@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="btn_show_toast">แสดงขนมปังปิ้ง</string>
+
+    <string name="btn_move_to_next_activity">ย้ายไปที่กิจกรรมถัดไป</string>
+    <string name="btn_share_to_apps">แชร์ไปที่แอปพลิเคชันอื่น ๆ</string>
+    <string name="btn_hobbies">แสดงงานอดิเรกของฉัน</string>
+
+    <string name="et_enter_msg">ใส่ข้อความเถอะนะขอร้อง</string>
+
+    <string name="btn_was_clicked">ปุ่มถูกคลิก!เเล้วครับคุณท่าน</string>
+
+    <string name="clicked">ยอดเยี่ยมไปเลย</string>
+</resources>
