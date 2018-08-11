@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import com.example.freedom.firstkotlin.R
+import com.example.freedom.firstkotlin.showToast
 import kotlinx.android.synthetic.main.activity_seccond.*
 
 
@@ -16,7 +17,7 @@ class SeccondActivity : AppCompatActivity() {
         val bundle: Bundle = intent.extras
         val msg = bundle.getString("user_massage")
 
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+        showToast(msg)
 
         txtUserMessage.text = msg
     }
