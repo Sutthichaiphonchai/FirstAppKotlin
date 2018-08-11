@@ -14,11 +14,14 @@ class SeccondActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_seccond)
 
+        //safe call   = ?.
+        //safe call with let =  ?.let{...}
+
         val bundle: Bundle = intent.extras
-        val msg = bundle.getString("user_massage")
-
-        showToast(msg)
-
-        txtUserMessage.text = msg
+        bundle?.let {
+            val msg = bundle.getString("user_massage")
+            showToast(msg)
+            txtUserMessage.text = msg
+        }
     }
 }

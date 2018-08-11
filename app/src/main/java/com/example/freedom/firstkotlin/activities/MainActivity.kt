@@ -4,6 +4,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import com.example.freedom.firstkotlin.R
 import com.example.freedom.firstkotlin.showToast
 import kotlinx.android.synthetic.main.activity_main.*
@@ -16,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         btnShowToast.setOnClickListener {
             Log.i("MainActivity", "Button was clicked !! ")
-            showToast("Button was clicked !!")
+            showToast("Button was clicked !!" ,Toast.LENGTH_LONG)
 
         }
 

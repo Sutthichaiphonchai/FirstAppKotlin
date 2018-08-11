@@ -35,25 +35,43 @@ class HobbiesAdapter(val context: Context, private val hobbies: List<Hobby>) : R
 
         init {
             itemview.setOnClickListener {
-                context.showToast(currentHobby!!.title + " Click !  ")
+                currentHobby?.let {
+                    context.showToast(currentHobby!!.title + " Click !  ")
+                }
+//                context.showToast(currentHobby!!.title + " Click !  ")
                 //Toast.makeText(context, currentHobby!!.title + " Click !  ", Toast.LENGTH_SHORT).show()
             }
 
             itemview.imgShare.setOnClickListener {
-                val message: String = "My hobby is " + currentHobby!!.title
 
-                val intent = Intent()
-                intent.action = Intent.ACTION_SEND
-                intent.putExtra(Intent.EXTRA_TEXT, message)
-                intent.type = "text/plain"
+                currentHobby?.let {
+                    val message: String = "My hobby is " + currentHobby!!.title
+
+                    val intent = Intent()
+                    intent.action = Intent.ACTION_SEND
+                    intent.putExtra(Intent.EXTRA_TEXT, message)
+                    intent.type = "text/plain"
 
 
-                context.startActivity(Intent.createChooser(intent, "Please Select Apps:"))
+                    context.startActivity(Intent.createChooser(intent, "Please Select Apps:"))
+                }
+//                val message: String = "My hobby is " + currentHobby!!.title
+//
+//                val intent = Intent()
+//                intent.action = Intent.ACTION_SEND
+//                intent.putExtra(Intent.EXTRA_TEXT, message)
+//                intent.type = "text/plain"
+//
+//
+//                context.startActivity(Intent.createChooser(intent, "Please Select Apps:"))
             }
         }
 
         fun setData(hobby: Hobby?, pos: Int) {
-            itemView.txvTitle.text = hobby!!.title
+            hobby?.let {
+                itemView.txvTitle.text = hobby!!.title
+            }
+//            itemView.txvTitle.text = hobby!!.title
 
             this.currentHobby = hobby
             this.currentPosition = pos
