@@ -38,7 +38,13 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra(Intent.EXTRA_TEXT,message)
             intent.type = "text/plain"
 
+
             startActivity(Intent.createChooser(intent,"Please Select Apps:"))
+        }
+
+        btnRecyclerViewDemo.setOnClickListener {
+            val  intent = Intent(this,HobbiesActivity::class.java)
+            startActivity(intent)
         }
 
 
